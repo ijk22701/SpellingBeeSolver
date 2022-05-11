@@ -29,19 +29,11 @@ for int in range(6):
 print (otherLetters)
 otherLetters.append(mustContain)
 
-i = 0
 validWords = []
-for word in words:
-    
-    i = i + 1
-    
-    valid = True
-    if not search(mustContain, word):
-        valid = False
-    if valid and not all(x in otherLetters for x in word):
-        valid = False
-    if (valid):
+for word in words: 
+    if search(mustContain, word) and all(x in otherLetters for x in word):
         validWords.append(word)
+        
 
 
 print("Valid words are: ")
